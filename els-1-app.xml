@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- RUN FIRST: Build MacOS .app for ELS and ELS_Updater -->
+
+<project name="ELS MacOS .app Build" default="All" basedir=".">
+
+    <!-- https://github.com/TheInfiniteKind/appbundler -->
+    <taskdef name="bundleapp"
+             classpath="appbundler-1.0ea.jar"
+             classname="com.oracle.appbundler.AppBundlerTask"/>
+
+    <target name="init">
+        <property file="els.properties"/>
+        <echo message="ELS version ${els.version.name}" level="info"/>
+        <echo message="${java.vendor} ${java.runtime.name} ${java.runtime.version}" level="info"/>
+        <echo message="${ant.version}" level="info"/>
+    </target>
+
+    <target name="clean" depends="init">
+        <delete dir="build/" includes="*.dmg" failonerror="false"/>
+        <delete dir="build/ELS.app" failonerror="false"/>
+        <delete dir="build/ELS_Updater.app" failonerror="false"/>
+    </target>
+
+    <!-- Build ELS macOS .dmg -->
+    <target name="els-macos" depends="clean">
+        <property file="ELS/build-stamp.properties"/>
+        <echo message="${els.version.name}, ${els.build.stamp}" level="info"/>
+        <bundleapp
+                outputdirectory="build/"
+                executableName="ELS-Navigator"
+                name="ELS"
+                displayname="Entertainment Library Synchronizer"
+                identifier="com.corionis.els"
+                shortversion="${els.version.name}, ${els.build.stamp}"
+                icon="artifacts/els-logo-98px.icns"
+                mainclassname="com.corionis.els.Main"
+                copyright="https://github.com/Corionis/ELS"
+                applicationCategory="public.app-category.utilities"
+        >
+            <classpath file="ELS/bin/ELS.jar" />
+            <runtime dir="ELS/rt/Contents/Home"/>
+        </bundleapp>
+        <copy file="ELS/bin/update.info" todir="build/ELS.app/Contents/Java" preservelastmodified="true"/>
+        <copy file="ELS/bin/els-logo-98px.icns" todir="build/ELS.app/Contents" preservelastmodified="true"/>
+        <copy file="ELS/License.txt" todir="build/ELS.app/Contents" preservelastmodified="true"/>
+        <copy file="ELS/Notice.txt" todir="build/ELS.app/Contents" preservelastmodified="true"/>
+    </target>
+
+    <!-- ELS Updater ========================================== -->
+
+    <target name="updater-macos" depends="clean">
+        <property file="ELS_Updater/build-stamp.properties"/>
+        <echo message="Updater ${els.version.name}, ${els.build.stamp}" level="info"/>
+        <bundleapp
+                outputdirectory="build/"
+                executableName="ELS_Updater"
+                name="ELS_Updater"
+                displayname="ELS_Updater_app"
+                identifier="com.corionis.els"
+                shortversion="${els.version.name}, ${els.build.stamp}"
+                icon="artifacts/els-logo-98px.icns"
+                mainclassname="com.corionis.els_updater.Main"
+                copyright="https://github.com/Corionis/ELS"
+                applicationCategory="public.app-category.utilities"
+        >
+            <classpath file="ELS_Updater/bin/ELS_Updater.jar" />
+            <runtime dir="ELS_Updater/rt/Contents/Home"/>
+        </bundleapp>
+        <copy file="ELS_Updater/bin/update.info" todir="build/ELS_Updater.app/Contents/Java" preservelastmodified="true"/>
+        <copy file="ELS_Updater/bin/els-logo-98px.icns" todir="build/ELS_Updater.app/Contents" preservelastmodified="true"/>
+    </target>
+
+
+    <!-- Primary Targets ========================================== -->
+
+    <target name="All" depends="els-macos, updater-macos" description="Build all deliverables"/>
+
+</project>

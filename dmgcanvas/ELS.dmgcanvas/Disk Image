@@ -7,7 +7,7 @@
       "layoutObjects" : [
         {
           "alignment" : 1,
-          "bounds" : "{{192, 130}, {200, 100}}",
+          "bounds" : "{{200, 130}, {200, 100}}",
           "hasShadow" : true,
           "identifier" : "wskzgtygki",
           "layoutObjectType" : "text",
@@ -44,20 +44,20 @@
     "windowContentHeight" : 360,
     "windowContents" : [
       {
-        "filePath" : "\/Users\/trh\/Work\/corionis\/ELS-MacOS-Imager\/ELS.app",
-        "iconSize" : 100,
-        "invisible" : false,
-        "isAnAlias" : false,
-        "location" : "{117, 180}",
-        "relativeFilePath" : "ELS.app"
-      },
-      {
         "filePath" : "\/Applications",
         "iconSize" : 100,
         "invisible" : false,
         "isAnAlias" : true,
-        "location" : "{472, 180}",
-        "relativeFilePath" : "..\/..\/..\/..\/..\/Applications"
+        "location" : "{477, 180}",
+        "relativeFilePath" : "..\/..\/..\/..\/..\/..\/Applications"
+      },
+      {
+        "filePath" : "\/Users\/trh\/Work\/corionis\/ELS-MacOS-Imager\/build\/ELS.app",
+        "iconSize" : 100,
+        "invisible" : false,
+        "isAnAlias" : false,
+        "location" : "{116, 180}",
+        "relativeFilePath" : "..\/build\/ELS.app"
       }
     ],
     "windowContentWidth" : 600,

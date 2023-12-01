@@ -1,0 +1,52 @@
+{
+  "diskImage" : {
+    "autoopen" : true,
+    "background" : {
+      "color" : "{1.000000, 1.000000, 1.000000, 1.000000}",
+      "layoutObjects" : [
+        {
+          "bounds" : "{{0, 0}, {600, 360}}",
+          "filePath" : "\/Users\/trh\/Work\/corionis\/ELS-MacOS-Imager\/dmg-background.png",
+          "identifier" : "dmg-background",
+          "image" : "syyezbpqvb",
+          "layoutObjectType" : "image",
+          "relativeFilePath" : "dmg-background.png",
+          "uid" : "syyezbpqvb"
+        }
+      ],
+      "type" : 1
+    },
+    "iconPreviewVisible" : false,
+    "iconSize" : 48,
+    "itemInfoVisible" : false,
+    "labelPosition" : 0,
+    "licenses" : [
+
+    ],
+    "nameFontSize" : 12,
+    "statusBarVisible" : false,
+    "toolbarVisible" : false,
+    "uid" : "hrfqnprciz",
+    "validationScheme" : 0,
+    "viewLayout" : 0,
+    "volumeIcon" : "volumeIcon",
+    "volumeName" : "ELS_Updater",
+    "volumeSize" : 0,
+    "volumeSizeOption" : "Automatic",
+    "windowContentHeight" : 360,
+    "windowContents" : [
+      {
+        "filePath" : "\/Users\/trh\/Work\/corionis\/ELS-MacOS-Imager\/build\/ELS_Updater.app",
+        "iconSize" : 100,
+        "invisible" : false,
+        "isAnAlias" : false,
+        "location" : "{300, 180}",
+        "relativeFilePath" : "..\/build\/ELS_Updater.app"
+      }
+    ],
+    "windowContentWidth" : 600,
+    "windowLeft" : 200,
+    "windowTop" : 120
+  },
+  "version" : 4
+}

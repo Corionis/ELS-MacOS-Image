@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ELS MacOS rename" default="All" basedir=".">
+
+    <target name="init">
+        <property file="els.properties"/>
+        <property file="ELS/build-stamp.properties"/>
+        <echo message="ELS version ${els.version.name}" level="info"/>
+        <echo message="${java.vendor} ${java.runtime.name} ${java.runtime.version}" level="info"/>
+        <echo message="${ant.version}" level="info"/>
+    </target>
+
+    <target name="All" depends="init" description="Rename deliverables">
+        <move file="build/ELS-macos.dmg" tofile="build/ELS-${els.version.name}-${els.build.number}.dmg" />
+        <move file="build/ELS-macos-updater.dmg" tofile="build/ELS_Updater-${els.version.name}-${els.build.number}.dmg" />
+    </target>
+
+</project>
