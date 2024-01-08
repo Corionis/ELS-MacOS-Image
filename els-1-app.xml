@@ -5,6 +5,7 @@
 <project name="ELS MacOS .app Build" default="All" basedir=".">
 
     <!-- https://github.com/TheInfiniteKind/appbundler -->
+    <!-- /usr/local/apache-ant-1.9.16/lib/appbundler-1.0ea.jar -->
     <taskdef name="bundleapp"
              classpath="appbundler-1.0ea.jar"
              classname="com.oracle.appbundler.AppBundlerTask"/>
